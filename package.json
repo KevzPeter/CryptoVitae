@@ -1,0 +1,26 @@
+{
+  "name": "cryptovitae",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KevzPeter/CryptoVitae.git"
+  },
+  "author": "Kevin Peter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KevzPeter/CryptoVitae/issues"
+  },
+  "homepage": "https://github.com/KevzPeter/CryptoVitae#readme",
+  "description": "",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.3",
+    "hardhat": "^2.23.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0"
+  }
+}
