@@ -28,19 +28,6 @@ export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors">
       {/* Header */}
-      <header className="w-full border-b px-6 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold tracking-tight">DecentID Pro</h1>
-        <div className="flex items-center space-x-4">
-          <nav className="hidden sm:flex space-x-6 text-sm font-medium">
-            <Link href="/" className="hover:text-primary">Home</Link>
-            <Link href="/resume/create" className="hover:text-primary">Create</Link>
-            <Link href="/dashboard" className="hover:text-primary">Dashboard</Link>
-          </nav>
-          <Button variant="ghost" size="icon" onClick={toggleDarkMode}>
-            {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-          </Button>
-        </div>
-      </header>
 
       {/* Hero Section */}
       <main className="flex-1 px-6 py-20 flex items-center justify-center text-center">
@@ -50,7 +37,7 @@ export default function LandingPage() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4 max-w-3xl mx-auto">
-            Build your Wallet-Verified Resume with <span className="text-blue-600 dark:text-blue-400">DecentID Pro</span>
+            Build your Wallet-Verified Resume with <span className="text-blue-600 dark:text-blue-400">CryptoVitae Pro</span>
           </h2>
           <p className="text-lg text-muted-foreground dark:text-gray-300 mb-8 max-w-xl mx-auto">
             Showcase your skills, experience, and on-chain credentials with a modern, decentralized resume.
@@ -91,11 +78,6 @@ export default function LandingPage() {
           </div>
         </motion.div>
       </section>
-
-      {/* Footer */}
-      <footer className="border-t px-6 py-6 text-sm text-muted-foreground dark:text-gray-400 text-center">
-        Built with ❤️ by Kevin • © {new Date().getFullYear()} DecentID Pro
-      </footer>
     </div>
   );
 }

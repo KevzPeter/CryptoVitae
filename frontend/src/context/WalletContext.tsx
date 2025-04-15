@@ -1,13 +1,19 @@
 "use client";
-import { createContext, useState } from "react";
+
+import { createContext, useEffect, useState } from "react";
 
 export const WalletContext = createContext({
     walletAddress: "",
     connectWallet: async () => { },
 });
 
-export const WalletProvider = ({ children, }: Readonly<{ children: React.ReactNode; }>) => {
+export const WalletProvider = ({ children }) => {
     const [walletAddress, setWalletAddress] = useState("");
+
+    useEffect(() => {
+        const stored = localStorage.getItem("wallet");
+        if (stored) setWalletAddress(stored);
+    }, []);
 
     const connectWallet = async () => {
         if (typeof window.ethereum !== "undefined") {
@@ -16,9 +22,10 @@ export const WalletProvider = ({ children, }: Readonly<{ children: React.ReactNo
                     method: "eth_requestAccounts",
                 });
                 setWalletAddress(account);
+                localStorage.setItem("wallet", account); // ✅ persist
                 return account;
             } catch (err) {
-                console.error("User rejected request", err);
+                console.error("User rejected wallet connection", err);
             }
         } else {
             alert("Please install MetaMask.");
