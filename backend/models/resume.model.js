@@ -9,11 +9,11 @@ const resumeSchema = new mongoose.Schema(
         },
         tokenId: {
             type: Number,
-            required: true,
+            // required: true,
         },
         resumeURI: {
             type: String,
-            required: true,
+            // required: true,
         },
         name: {
             type: String,
@@ -21,6 +21,23 @@ const resumeSchema = new mongoose.Schema(
         },
         title: String,
         bio: String,
+        workExperience: [
+            {
+                company: { type: String, required: true },
+                role: { type: String, required: true },
+                startDate: { type: String },
+                endDate: { type: String },
+                description: { type: String, required: true },
+            }
+        ],
+
+        projects: [
+            {
+                name: { type: String, required: true },
+                link: { type: String },
+                description: { type: String, required: true },
+            }
+        ],
         skills: [String],
         linkedin: String,
         github: String,

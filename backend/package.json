@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Backend server for DecentID",
+  "description": "Backend server for CryptoVitae",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",

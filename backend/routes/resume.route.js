@@ -1,16 +1,12 @@
 const express = require('express');
-const {
-    createResume,
-    getResumeByWallet,
-    updateResume,
-    incrementViewCount,
-} = require('../controllers/resume.controller.js');
+const resumeController = require('../controllers/resume.controller.js');
 
 const router = express.Router();
 
-router.post('/', createResume);
-router.get('/:wallet', getResumeByWallet);
-router.put('/:wallet', updateResume);
-router.post('/view/:tokenId', incrementViewCount);
+router.post('/', resumeController.createResume);
+router.get('/:wallet', resumeController.getResumeByWallet);
+router.put('/:wallet', resumeController.updateResume);
+router.post('/view/:tokenId', resumeController.incrementViewCount);
+router.get("/", resumeController.getAllResumes);
 
 module.exports = router;
