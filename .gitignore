@@ -2,3 +2,4 @@
 **/dist
 **/.env
 **/artifacts/
+**/cache/
