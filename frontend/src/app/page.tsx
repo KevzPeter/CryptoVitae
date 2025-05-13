@@ -37,7 +37,7 @@ export default function LandingPage() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl sm:text-5xl font-bold mb-4 max-w-3xl mx-auto">
-            Build your Wallet-Verified Resume with <span className="text-blue-600 dark:text-blue-400">CryptoVitae Pro</span>
+            Build your Wallet-Verified Resume with <span className="text-blue-600 dark:text-blue-400">CryptoVitae</span>
           </h2>
           <p className="text-lg text-muted-foreground dark:text-gray-300 mb-8 max-w-xl mx-auto">
             Showcase your skills, experience, and on-chain credentials with a modern, decentralized resume.
