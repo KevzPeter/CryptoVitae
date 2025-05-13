@@ -42,7 +42,7 @@ CryptoVitae is a decentralized resume builder and credential verification platfo
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/cryptovitae.git
+git clone https://github.com/KevzPeter/CryptoVitae.git
 cd cryptovitae
 ```
 
