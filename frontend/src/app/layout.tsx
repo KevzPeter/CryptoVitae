@@ -8,6 +8,18 @@ import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const metadata = {
+  title: {
+    default: "CryptoVitae",
+    template: "%s | CryptoVitae",
+  },
+  description: "Create a wallet-verified resume with CryptoVitae.",
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
