@@ -1,11 +1,78 @@
-# 🧾 CryptoVitae — NFT Resume Platform
+# 🧾 CryptoVitae - NFT Resume Platform
 
 Author: Kevin Peter
 Email: kpk4354@nyu.edu
 
 <img src="./media/homepage.png" height="600px" width="auto" alt="Homepage"></img>
 
-CryptoVitae is a decentralized resume builder and credential verification platform powered by Ethereum smart contracts. Users can mint their resume as an NFT, receive verifiable endorsements from peers, and collect organizational badges — all tied to their wallet.
+CryptoVitae is a decentralized resume builder and credential verification platform powered by Ethereum smart contracts. Users can mint their resume as an NFT, receive verifiable endorsements from peers, and collect organizational badges, all tied to their wallet.
+
+## 📸 Screenshots
+
+### 🏠 Homepage
+
+Landing page prompting users to connect their wallet and begin building a wallet-verified resume.
+<img src="./media/homepage.png" height="400"/>
+
+### 👥 Ganache (Local Ethereum network simulator) Test Accounts
+
+Set of local Ethereum test accounts preloaded with ETH on Ganache.
+<img src="./media/ganache_accounts.png" height="400"/>
+
+### ➕ Add Wallet to MetaMask
+
+Interface for adding a wallet address to MetaMask manually.
+<img src="./media/add_wallet_metamask.png" height="400"/>
+
+### 👛 Imported Wallets
+
+View of MetaMask showing imported test wallets for local development.
+<img src="./media/imported_wallets.png" height="400"/>
+
+### 🔍 Explore Page
+
+Users can browse public resumes, filter by tags or credentials, and view wallet-linked resumes.
+<img src="./media/explore_page.png" height="400"/>
+
+### 📄 Public Resume Viewer
+
+Displays a user’s resume with endorsements and badges, accessible via wallet address.
+<img src="./media/public_resume_page.png" height="600"/>
+
+### ✏️ Resume Edit Page
+
+Resume creation form where users input their profile, work experience, and skills.
+<img src="./media/resume_edit.png" height="600"/>
+
+### ✅ Confirm Resume Transaction
+
+MetaMask confirmation popup for minting a resume NFT on the blockchain.
+<img src="./media/confirm_resume_transaction.png" height="400"/>
+
+### 🧱 Mint Resume NFT
+
+Interface that confirms resume minting by initiating an on-chain transaction.
+<img src="./media/mint_resume.png" height="400"/>
+
+### ✍️ Adding Endorsements
+
+MetaMask popup to confirm the endorsement transaction on-chain.
+<img src="./media/confirm_endorsement.png" height="400"/>
+
+### 🤝 Confirmed Endorsement
+
+Form where a user endorses another user’s resume by signing a message.
+<img src="./media/endorsement.png" height="400"/>
+
+### 📊 Dashboard Page
+
+Personal dashboard page with resume
+<img src="./media/dashboard_page.png" height="400"/>
+
+### 🧾 Transaction Log (Ganache)
+
+Shows a list of blockchain transactions during local testing with Ganache.
+<img src="./media/transactions.png" height="400"/>
 
 ---
 
@@ -17,6 +84,25 @@ CryptoVitae is a decentralized resume builder and credential verification platfo
 - 🌐 **Public Resume Viewer** — View resumes at `/resume/view/[wallet]` with QR export
 - 🔍 **Explore Page** — Browse public resumes with filters and badge highlights
 - 📦 **MongoDB Storage** — Off-chain metadata management for resume and badge content
+
+---
+
+## ⚙️ Smart Contracts
+
+Smart contracts are located in the [`/contracts`](./contracts) directory.
+
+- [`ResumeNFT.sol`](./contracts/ResumeNFT.sol)  
+  Handles resume NFT minting and on-chain endorsements. Includes:
+
+  - `mintResume`: Mints a resume with metadata and hash
+  - `endorseResume`: Stores peer endorsements (no self/duplicate endorsements)
+  - `verifyResume`: Compares resume hash for authenticity
+
+- [`BadgeNFT.sol`](./contracts/BadgeNFT.sol)  
+  Lets whitelisted organizations issue badge NFTs. Includes:
+  - `whitelistOrg`: Owner-only function to whitelist an org
+  - `mintBadge`: Mints a badge NFT with type and URI
+  - Emits a `BadgeIssued` event on every badge mint
 
 ---
 
@@ -128,7 +214,7 @@ npm run dev
 ## 🧑‍💻 App Usage
 
 1. **Connect Wallet:** Use MetaMask to sign in
-2. **Create Resume:** Fill out the form and submit — an NFT will be minted
+2. **Create Resume:** Fill out the form and submit. Then an NFT will be minted
 3. **View Resume:** Navigate to `/resume/view/[wallet]` to share your profile
 4. **Endorse:** Visit another user’s resume and click “Endorse”
 5. **Issue Badges:** Organizations can mint badges to wallets they’ve verified
