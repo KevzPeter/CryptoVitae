@@ -17,12 +17,12 @@ CryptoVitae is a decentralized resume builder and credential verification platfo
 
 ## 📦 Tech Stack
 
-| Layer      | Technology                                       |
-| ---------- | ------------------------------------------------ |
-| Frontend   | Next.js, TailwindCSS, Shadcn UI, React Hot Toast |
-| Backend    | Node.js, Express.js, MongoDB Atlas               |
-| Blockchain | Solidity, Hardhat, Ganache, Ethers.js            |
-| Wallet     | MetaMask                                         |
+| Layer      | Technology                            |
+| ---------- | ------------------------------------- |
+| Frontend   | Next.js, TailwindCSS, Shadcn UI       |
+| Backend    | Node.js, Express.js, MongoDB Atlas    |
+| Blockchain | Solidity, Hardhat, Ganache, Ethers.js |
+| Wallet     | MetaMask                              |
 
 ---
 
