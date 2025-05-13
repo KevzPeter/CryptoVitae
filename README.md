@@ -33,7 +33,7 @@ CryptoVitae is a decentralized resume builder and credential verification platfo
 - MongoDB Atlas connection string
 - MetaMask browser extension
 - Hardhat installed globally (for local dev)
-- Infura/Alchemy RPC URL (for testnet/mainnet deployment)
+- Ganache (for testnet deployment)
 
 ---
 
