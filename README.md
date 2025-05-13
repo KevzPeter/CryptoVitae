@@ -1,4 +1,4 @@
-# 🧾 CryptoVitae — Blockchain-Backed Resume Platform
+# 🧾 CryptoVitae — NFT Resume Platform
 
 Author: Kevin Peter
 Email: kpk4354@nyu.edu
