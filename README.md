@@ -3,6 +3,8 @@
 Author: Kevin Peter
 Email: kpk4354@nyu.edu
 
+<img src="./media/homepage.png" height="600px" width="auto" alt="Homepage"></img>
+
 CryptoVitae is a decentralized resume builder and credential verification platform powered by Ethereum smart contracts. Users can mint their resume as an NFT, receive verifiable endorsements from peers, and collect organizational badges — all tied to their wallet.
 
 ---
