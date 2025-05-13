@@ -30,10 +30,10 @@ CryptoVitae is a decentralized resume builder and credential verification platfo
 
 - Node.js v18+
 - Yarn or npm
-- MongoDB Atlas connection string
+- MongoDB local instance at `mongodb://localhost:27017/cryptovitae`
 - MetaMask browser extension
-- Hardhat installed globally (for local dev)
-- Ganache (for testnet deployment)
+- Ganache (local testnet)
+- Hardhat (for smart contract compilation and deployment)
 
 ---
 
@@ -46,13 +46,15 @@ git clone https://github.com/KevzPeter/CryptoVitae.git
 cd cryptovitae
 ```
 
+---
+
 ### 2. Install dependencies
 
 ```bash
-cd frontend
+cd backend
 npm install
 
-cd ../backend
+cd ../frontend
 npm install
 ```
 
@@ -60,25 +62,12 @@ npm install
 
 ### 3. Environment Variables
 
-Create a `.env` file in both `frontend/` and `backend/` directories.
+Only the backend requires an `.env` file.
 
-**Frontend `.env.local`**
-
-```env
-NEXT_PUBLIC_BACKEND_URL=http://localhost:5000
-NEXT_PUBLIC_CONTRACT_ADDRESS_RESUME=0xYourResumeContractAddress
-NEXT_PUBLIC_CONTRACT_ADDRESS_BADGE=0xYourBadgeContractAddress
-NEXT_PUBLIC_CHAIN_ID=1337
-```
-
-**Backend `.env`**
+**backend/.env**
 
 ```env
-PORT=5000
-MONGO_URI=mongodb+srv://your_mongo_url
-CONTRACT_ADDRESS_RESUME=0xYourResumeContractAddress
-CONTRACT_ADDRESS_BADGE=0xYourBadgeContractAddress
-CHAIN_ID=1337
+MONGO_URI=mongodb://localhost:27017/cryptovitae
 ```
 
 ---
@@ -86,30 +75,34 @@ CHAIN_ID=1337
 ### 4. Compile Smart Contracts
 
 ```bash
-cd contracts
-npm install
 npx hardhat compile
 ```
 
 ---
 
-### 5. Deploy Smart Contracts
+### 5. Run Ganache
 
-```bash
-npx hardhat run scripts/deploy.js --network localhost
-```
-
-Make sure Ganache or Hardhat local node is running:
-
-```bash
-npx hardhat node
-```
-
-Copy the deployed contract addresses into your `.env` files.
+Make sure Ganache is running locally at `http://127.0.0.1:8545`.
 
 ---
 
-### 6. Start the Backend Server
+### 6. Deploy Smart Contracts (ResumeNFT + BadgeNFT)
+
+Run the deployment and org-whitelisting scripts:
+
+```bash
+npx hardhat run scripts/deploy.js --network localhost
+npx hardhat run scripts/whitelist-orgs.js --network localhost
+```
+
+Copy the deployed contract addresses from the console into:
+
+- `backend/config/constants.js`
+- `frontend/src/lib/constants.ts`
+
+---
+
+### 7. Start the backend server
 
 ```bash
 cd backend
@@ -118,7 +111,7 @@ npm run dev
 
 ---
 
-### 7. Start the Frontend
+### 8. Start the frontend dev server
 
 ```bash
 cd frontend
@@ -139,6 +132,8 @@ npm run dev
 ---
 
 ## 📹 Live Demo
+
+Embed your YouTube walkthrough here:
 
 [![Watch the Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
 
